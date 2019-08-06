@@ -7,12 +7,11 @@ contract StandardToken is ERC20Token {
 
   using SafeMath for uint256;
 
-  // Global variable to store total number of tokens passed from FsToken.sol
+  // Global variable to store total number of tokens passed from FRSPToken.sol
   uint256 _totalSupply;
 
   mapping(address => uint256) balances;
   mapping(address => mapping(address => uint256)) allowed;
-
 
   function totalSupply() public view returns (uint256) {
     return _totalSupply;

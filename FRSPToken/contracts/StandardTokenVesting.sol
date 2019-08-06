@@ -87,7 +87,7 @@ contract StandardTokenVesting is Ownable {
   }
 
   /** @dev Calculates the amount that has already vested.
-    * @param token FS token which is being vested
+    * @param token FRSP Token which is being vested
     */
   function vestedAmount(FRSPToken token) public view returns (uint256) {
     uint256 currentBalance = token.balanceOf(this);

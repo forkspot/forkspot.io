@@ -12,23 +12,17 @@ contract FRSPToken is StandardToken, Ownable {
     string public constant name = "FRSP Token";
     uint8 public constant decimals = 18;
 
-    // Total Number of tokens ever goint to be minted. 2.5 BILLION FST tokens.
+    // Total Number of tokens ever goint to be minted. 2.5 BILLION FRSP tokens.
     uint256 private constant minting_capped_amount = 2500000000 * 10 ** uint256(decimals);
-
-
-
 
     // 10% of inital supply.
     uint256  constant vesting_amount = 250000000 * 10 ** uint256(decimals);
-    // Total initial supply of tokens to be given away initially. Rested is minted. Should be 500M tokens.
-    uint256 private initialSupply = vesting_amount;
+
+    uint256 private initialSupply = minting_capped_amount;
 
     address public vestingAddress;
 
-
-
-   
-
+  
     /** @dev to cap the total number of tokens that will ever be newly minted
       * owner has to stop the minting by setting this variable to true.
       */
@@ -45,8 +39,8 @@ contract FRSPToken is StandardToken, Ownable {
       _;
     }
 
-    /** @dev to prevent malicious use of FST tokens and to comply with Anti
-      * Money laundering regulations FST tokens can be frozen.
+    /** @dev to prevent malicious use of FRSP tokens and to comply with Anti
+      * Money laundering regulations FRSP tokens can be frozen.
       */
     mapping (address => bool) public frozenAccount;
 
@@ -56,7 +50,6 @@ contract FRSPToken is StandardToken, Ownable {
     event Mint(address indexed to, uint256 amount);
     event MintFinished();
     event Burn(address indexed burner, uint256 value);
-
 
     constructor() public {
 
@@ -82,8 +75,6 @@ contract FRSPToken is StandardToken, Ownable {
     }
 
 
-   
-
     /** @dev Transfer possible only after ICO ends and Frozen accounts
       * wont be able to transfer funds to other any other account and viz.
       * @notice added safeTransfer functionality
@@ -97,7 +88,7 @@ contract FRSPToken is StandardToken, Ownable {
     }
 
     /** @dev Only owner's tokens can be transferred before Crowdsale ends.
-      * beacuse the inital supply of FST is allocated to owners acc and later
+      * beacuse the inital supply of FRSP is allocated to owners acc and later
       * distributed to various subcontracts.
       * @notice added safeTransferFrom functionality
       */
@@ -174,6 +165,4 @@ contract FRSPToken is StandardToken, Ownable {
 }
 
 
-//ieo date set from smart contract
-//todo
 

@@ -1,3 +1,3 @@
-first deploye fsToken contract
-then FsTokenVestingFactory.sol contract and pass fstoken contract address as a parameter
-then set FsTokenVestingFactory contract address in fstoken by calling setVestingAddress method and pass vesting contract address
+first deploye FRSPToken contract
+then FRSPTokenVestingFactory.sol contract and pass FRSPToken contract address as a parameter
+then set FRSPTokenVestingFactory contract address in FRSPToken by calling setVestingAddress method and pass vesting contract address

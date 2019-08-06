@@ -11,7 +11,7 @@ import './Ownable.sol';
  * that ensures the creation of new token vesting contracts.
  */
 
-contract FsTokenVestingFactory is Ownable {
+contract FRSPTokenVestingFactory is Ownable {
 
     mapping(address => StandardTokenVesting) vestingContractAddresses;
 
@@ -26,8 +26,8 @@ contract FsTokenVestingFactory is Ownable {
         token = FRSPToken(_token);
     }
 
-   /** @dev Deploy FsTokenVestingFactory, and use it to create vesting contracts
-     * for founders, advisors and developers. after creation transfer Fs tokens
+   /** @dev Deploy FRSPTokenVestingFactory, and use it to create vesting contracts
+     * for founders, advisors and developers. after creation transfer FRSP tokens
      * to those addresses and vesting vaults will be initialised.
      */
     // function create(address _beneficiary, uint256 _start, uint256 _cliff, uint256 _duration, bool _revocable, uint256 noOfTokens) onlyOwner public returns(StandardTokenVesting) {
